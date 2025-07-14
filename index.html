@@ -3,12 +3,35 @@
 </head>
 <body>
 <h1>Puzzle 275</h1>
+<script type="text/javascript">
+const FileUploadExtension = {
+  name: 'FileUpload',
+  type: 'response',
+  match: ({ trace }) =>
+    trace.type === 'ext_fileUpload' || trace.payload?.name === 'ext_fileUpload',
+  render: ({ trace, element }) => {
+  },
+}
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '684f211a14ed23b69cf21600' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+          assistant: {
+            extensions: [FileUploadExtension]
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+  
+</script>
 </body>
 </html>
 
-<style>
-.h1{
-margin-left: 400px;
-margin-top: 400px;
-}
-</style>
+
